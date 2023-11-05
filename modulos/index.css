@@ -1,0 +1,111 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    background-color: #b196fb;
+}
+
+.navBar{
+    background-color:  #2d2956;
+    width: 100%;
+    height: 20%;
+    position:relative;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+.titlePage{
+    top: 35px;
+    text-align: center;
+    font-size: 80px;
+    font-style: italic;
+    position: relative;
+    color: white; 
+}
+
+.tittleVerifique{
+    top: 30px;
+    color: white;
+    font-size: 40px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+.titleCotacoes{
+    font-style:Arial;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    display: flex;
+    color: #020617; 
+    bottom: 15px;
+    position: relative;
+}
+.containerMain{
+    top: 80px;
+    position: relative;
+    width: 40%;
+    left: 580px;
+    height: 385px;
+    background-color: #2d2956;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: solid 1px;
+    border-color: gray;
+    border-radius: 20px;
+}
+.valorReal{
+    color: DEEPSKYBLUE;
+    align-items: center;
+    font-style: arial;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10%;
+    font-size: 50;
+
+}
+.valorRealDescricao{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    font-size: 25;
+}
+
+.buttonGrafico{
+    display: flex;
+    position: relative;
+    align-items: center;
+    top: 50;
+    justify-content: center;
+    gap: 30px;
+}
+.buttonAlteraGrafico{
+    width: 100px;
+    height: 40;
+    border-radius: 22px;
+    border: solid;
+    border-color: white;
+    background-color: white;
+}
+.grafico{
+    background-color: azure;
+    top: 95;
+    height: 600;
+    width: 1000;
+    left: 24%;
+    position: relative;
+    box-shadow: rgba(19, 49, 109, 0.08) 0px 6px 48px 0px;
+}
+
+#myChart{
+    position: relative;
+    top: 100px;
+    border: solid 2px;
+    border-radius: 20px;
+    background-color: white;
+    border-color: black;
+    box-shadow: rgba(19, 49, 109, 0.08) 0px 6px 48px 0px;
+}
