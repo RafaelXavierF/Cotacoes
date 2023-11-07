@@ -64,9 +64,9 @@ function hoje(){
 
 function cincoDias(){
   var dataAtual = new Date().getTime()    
-  var timestempCincoDias = dataAtual - 432000
+  var menorData = dataAtual - 432000
 
-  realizaRequisicao(dataAtual, timestempCincoDias)
+  realizaRequisicao(dataAtual, menorData)
   .then((resposta) =>{
   listaSimulada = resposta
 
@@ -75,13 +75,10 @@ function cincoDias(){
 
   for(item in listaSimulada){
       dolar = parseFloat(listaSimulada[item]['Valor']);
-      data = Date.parse(listaSimulada[item]['DataHora'])
+      date = (listaSimulada[item]['Data'])
 
-      dia = data.getDay()
-      mes = data.getMonth()
-      ano = data.getFullYear()
+      data = date
 
-      data = dia+'/'+mes+'/'+ano
       horizontal.push(data);
       vertical.push(dolar);
   }
@@ -124,151 +121,128 @@ function cincoDias(){
   .catch((erro) =>{
     console.log('erro:' + erro)
   })
-
-    
-    
 }
 
 function umaSemana(){
-    // var dataAtual = new Date().getTime()
-    // var menorData = dataAtual - 604800   
+    var dataAtual = new Date().getTime()
+    var menorData = dataAtual - 604800   
     
-        horizontal = [];
-        vertical = [];
-    
-        for(item in listaSimulada){
-            dolar = parseFloat(listaSimulada[item]['Valor']);
-    
-            dia = listaSimulada[item]['DataHora'].getDay()
-            mes = listaSimulada[item]['DataHora'].getMonth()
-            ano = listaSimulada[item]['DataHora'].getFullYear()
-    
-            data = dia+'/'+mes+'/'+ano
-            horizontal.push(data);
-            vertical.push(dolar);
-        }
-            
-        const myChart = new Chart("myChart", {
-            type: "line",
-            data: {
-              labels: horizontal,
-              datasets: [{
-                fill: true,
-                pointRadius: 1,
-                backgroundColor: 'pink',
-                borderColor: "rgba(255,0,0,0.5)",
-                data: vertical
-              }]
-            },    
-            options: {
-              scales:{
-                yAxes:[{
-                  display:true,
-                  ticks:{
-                    beginAtZero: true,
-                                max: 6.00,
-                                min:2
-                  }
-                }]
-              },
-              responsive: false,
-              legend: {display: false},
-              title: {
-                display: true,
-                text: "Variação Dólar",
-                fontSize: 16
+    realizaRequisicao(dataAtual, menorData)
+    .then((resposta) =>{
+    listaSimulada = resposta
+  
+    horizontal = [];
+    vertical = [];
+  
+    for(item in listaSimulada){
+        dolar = parseFloat(listaSimulada[item]['Valor']);
+        date = (listaSimulada[item]['Data'])
+  
+        data = date
+  
+        horizontal.push(data);
+        vertical.push(dolar);
+    }
+        
+    const myChart = new Chart("myChart", {
+        type: "line",
+        data: {
+          labels: horizontal,
+          datasets: [{
+            fill: true,
+            pointRadius: 1,
+            backgroundColor: 'pink',
+            borderColor: "rgba(255,0,0,0.5)",
+            data: vertical
+          }]
+        },    
+        options: {
+          scales:{
+            yAxes:[{
+              display:true,
+              ticks:{
+                beginAtZero: true,
+                            max: 6.00,
+                            min:2
               }
-            },
-            config: {
-                type: 'line',
-                options: {
-                  indexAxis: 'y',
-                  scales: {
-                    x: {
-                        type:'Time',
-                        time:{
-                            unit: 'day',
-                            parse: 'dd, MM, yyyy'
-                        },
-                      beginAtZero: true
-                    }
-                  }
-                }
-              }
-          });
-    
-        return myChart
+            }]
+          },
+          responsive: false,
+          legend: {display: false},
+          title: {
+            display: true,
+            text: "Variação Dólar",
+            fontSize: 16
+          }
+        },
+      });
+  
+    return myChart
+    })
+    .catch((erro) =>{
+      console.log('erro:' + erro)
+    })
 }
 
 function umMes(){
-    // var dataAtual = new Date().getTime()
-    // var menorData = dataAtual - 25920000
+    var dataAtual = new Date().getTime()
+    var menorData = dataAtual - 25920000
      
-        horizontal = [];
-        vertical = [];
-    
-        for(item in listaSimulada){
-            dolar = parseFloat(listaSimulada[item]['Valor']);
-    
-            dia = listaSimulada[item]['DataHora'].getDay()
-            mes = listaSimulada[item]['DataHora'].getMonth()
-            ano = listaSimulada[item]['DataHora'].getFullYear()
-    
-            data = dia+'/'+mes+'/'+ano
-            horizontal.push(data);
-            vertical.push(dolar);
-        }
-            
-        const myChart = new Chart("myChart", {
-            type: "line",
-            data: {
-              labels: horizontal,
-              datasets: [{
-                fill: true,
-                backgroundColor: 'pink',
-                pointRadius: 1,
-                borderColor: "rgba(255,0,0,0.5)",
-                data: vertical
-              }]
-            },    
-            options: {
-              scales:{
-                yAxes:[{
-                  display:true,
-                  ticks:{
-                    beginAtZero: true,
-                                max: 6.00,
-                                min:2
-                  }
-                }]
-              },
-              responsive: false,
-              legend: {display: false},
-              title: {
-                display: true,
-                text: "Variação Dólar",
-                fontSize: 16
+    realizaRequisicao(dataAtual, menorData)
+    .then((resposta) =>{
+    listaSimulada = resposta
+  
+    horizontal = [];
+    vertical = [];
+  
+    for(item in listaSimulada){
+        dolar = parseFloat(listaSimulada[item]['Valor']);
+        date = (listaSimulada[item]['Data'])
+  
+        data = date
+  
+        horizontal.push(data);
+        vertical.push(dolar);
+    }
+        
+    const myChart = new Chart("myChart", {
+        type: "line",
+        data: {
+          labels: horizontal,
+          datasets: [{
+            fill: true,
+            pointRadius: 1,
+            backgroundColor: 'pink',
+            borderColor: "rgba(255,0,0,0.5)",
+            data: vertical
+          }]
+        },    
+        options: {
+          scales:{
+            yAxes:[{
+              display:true,
+              ticks:{
+                beginAtZero: true,
+                            max: 6.00,
+                            min:2
               }
-            },
-            config: {
-                type: 'line',
-                options: {
-                  indexAxis: 'y',
-                  scales: {
-                    x: {
-                        type:'Time',
-                        time:{
-                            unit: 'day',
-                            parse: 'dd, MM, yyyy'
-                        },
-                      beginAtZero: true
-                    }
-                  }
-                }
-              }
-          });
-    
-        return myChart
+            }]
+          },
+          responsive: false,
+          legend: {display: false},
+          title: {
+            display: true,
+            text: "Variação Dólar",
+            fontSize: 16
+          }
+        },
+      });
+  
+    return myChart
+    })
+    .catch((erro) =>{
+      console.log('erro:' + erro)
+    })
 }
 
 async function realizaRequisicao(maiorData, menorData){
