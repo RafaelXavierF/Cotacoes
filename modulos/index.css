@@ -109,3 +109,25 @@ body{
     border-color: black;
     box-shadow: rgba(19, 49, 109, 0.08) 0px 6px 48px 0px;
 }
+
+@media screen and (max-width: 1200px){
+    .navBar, .titlePage{
+        display: flex;
+
+    }
+
+    .containerMain, .tittleVerifique, .valorReal , .valorRealDescricao{
+        flex-direction: column;
+        
+    }
+
+    .containerGrafico{
+        display: flex;
+
+    }
+
+    .containerGrafico{
+        display: flex;
+
+    }
+}
